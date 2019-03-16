@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="alurapic"> <!--eu to dizendo p o angular que carregue o modulo alurapic-->
+<!--Nao basta importar o script do mod. ppal, o ng-app registra o modulo na app-->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -10,10 +11,19 @@
         <script src="js/lib/angular.min.js"></script>
         <!--Importando o script do bloco principal-->
         <script src="js/main.js"></script>
+        <!--Importando o script do fotos-controller-->
+        <script src="js/controllers/fotos-controller.js"></script>
     </head>
-    <body>
+    <!--A diretiva ng-controller instancia um controller e associa com uma parte do DOM: body-->
+    <body ng-controller='Fotos-Controller'>
         <div class="container">
             <h1 class="text-center">Alurapic</h1>
+            <!--As chaves doble sao p abrir lacuna = ANGULAR EXPRESSION na view, a view passa a ser um template
+            alguem precisa passar informacao para essas lacunas. As lacunas nao preenchidas o angular ignora
+            Significa que a view depende de um objeto foto que tem uma propriedade url
+            Quem se encarrega de passar as informacoes do model 'foto' p a view é um controller 
+            Ele controla alguma parte do DOM-->
+            <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
         </div> <!-- fim container-->        
     </body>
 </html>
