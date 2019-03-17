@@ -3,9 +3,15 @@
 //1 Parametro : nome controller
 //2 Parametro : funcao que define esse controller
 //convencoes: nome do controller (camel case), arquivos js (minusculas, palavras separadas por hifen)
-angular.module('alurapic').controller('FotosController', function(){
+angular.module('alurapic').controller('FotosController', function($scope){
+    //o $scope indica a dependencia do controller e o Angular qdo ve esse nome injeta a dependencia 
 
-    var foto = {
+    //variaveis declaradas dentro de funcao sao privadas, o escopo dela é dentro da funcao
+    //adicionei ao objeto $scope dinamicamente a propriedade foto
+    //tudo que é pendurado no $scope a view consegue ver
+    //Isso se chama DATA BINDING, a associacao desse dado disponibilizado pelo controller
+    //e que a view consegue ver. Qualquer atualizacao nesse dado se repercute na view
+    $scope.foto = {
         titulo : 'Leao',
         url : 'http://www.fundosanimais.com/imagens-wallpaper-leoes-jpg-800x600'
     };

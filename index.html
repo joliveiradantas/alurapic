@@ -1,3 +1,4 @@
+<!--O foco do frame Angular é a criacao de SPA, esse tipo de app nao recarrega a pagina durante o uso-->
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="alurapic"> <!--eu to dizendo p o angular que carregue o modulo alurapic-->
 <!--Nao basta importar o script do mod. ppal, o ng-app registra o modulo na app-->
@@ -7,7 +8,7 @@
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css"> 
-        <!--Importando o script do angular-->
+        <!--Importando o script do core do angular-->
         <script src="js/lib/angular.min.js"></script>
         <!--Importando o script do bloco principal-->
         <script src="js/main.js"></script>
@@ -16,7 +17,9 @@
     </head>
     <!--A diretiva ng-controller instancia um controller e associa com uma parte do DOM: body-->
     <body ng-controller='Fotos-Controller'>
+        <!--Container centraliza todo o conteudo da pagina-->
         <div class="container">
+            <!--text-center centraliza um elemento do tipo block-->
             <h1 class="text-center">Alurapic</h1>
             <!--As chaves doble sao p abrir lacuna = ANGULAR EXPRESSION na view, a view passa a ser um template
             alguem precisa passar informacao para essas lacunas. As lacunas nao preenchidas o angular ignora
