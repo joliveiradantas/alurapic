@@ -1,32 +1,30 @@
-<!--O foco do frame Angular é a criacao de SPA, esse tipo de app nao recarrega a pagina durante o uso-->
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="alurapic"> <!--eu to dizendo p o angular que carregue o modulo alurapic-->
-<!--Nao basta importar o script do mod. ppal, o ng-app registra o modulo na app-->
+<html lang="pt-br" ng-app="alurapic">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css"> 
-        <!--Importando o script do core do angular-->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <script src="js/lib/angular.min.js"></script>
-        <!--Importando o script do bloco principal-->
         <script src="js/main.js"></script>
-        <!--Importando o script do fotos-controller-->
         <script src="js/controllers/fotos-controller.js"></script>
     </head>
-    <!--A diretiva ng-controller instancia um controller e associa com uma parte do DOM: body-->
-    <body ng-controller='Fotos-Controller'>
-        <!--Container centraliza todo o conteudo da pagina-->
+    <body ng-controller="FotosController">
         <div class="container">
-            <!--text-center centraliza um elemento do tipo block-->
-            <h1 class="text-center">Alurapic</h1>
-            <!--As chaves doble sao p abrir lacuna = ANGULAR EXPRESSION na view, a view passa a ser um template
-            alguem precisa passar informacao para essas lacunas. As lacunas nao preenchidas o angular ignora
-            Significa que a view depende de um objeto foto que tem uma propriedade url
-            Quem se encarrega de passar as informacoes do model 'foto' p a view é um controller 
-            Ele controla alguma parte do DOM-->
-            <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-        </div> <!-- fim container-->        
+        
+            <div class="jumbotron">
+                <h1 class="text-center">Alurapic</h1>
+            </div>
+
+            <div ng-repeat="foto in fotos" class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{foto.titulo}}</h3>
+                </div>
+                <div class="panel-body">
+                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                </div>  
+            </div><!--fim panel-->
+        </div><!-- fim container -->
     </body>
 </html>
