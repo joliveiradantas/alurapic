@@ -11,6 +11,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
         console.log(erro);
     });
     
+    //Cumpre a mesma funcao do $http.get de acima
     /*var promise = $http.get('/v1/fotos');
     promise.then(function(retorno) {
         $scope.fotos = retorno.data;
@@ -19,5 +20,27 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
         console.log(error)
     });
     */
+   
+   //Dados de forma estática
+    /*
+   angular.module('alurapic').controller('FotosController', function($scope) {
+
+    $scope.foto = {
+        titulo: 'Leão',
+        url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
+    };
+
+    $scope.foto2 = {
+        titulo: 'Leão2',
+        url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
+    };
+
+    $scope.foto3 = {
+        titulo: 'Leão3',
+        url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
+    };
+
+});
+   */
 
 });
