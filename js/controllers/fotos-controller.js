@@ -1,11 +1,15 @@
 angular.module('alurapic').controller('FotosController', function($scope, $http) {
+    //$http - servico do angular responsavel de fazer requisicoes ajax.
+    //É uma requisicao asincrona, nao se sabe qdo vai terminar
+    //o que ele devolve é uma promessa
 
     $scope.fotos = [];
 
     $http.get('/v1/fotos')
     .success(function(retorno) {
         console.log(retorno);
-        $scope.fotos = retorno; //nao precisa fazer retorno.data
+        $scope.fotos = retorno; //nao precisa fazer retorno.data porque "retorno" nesse 
+        //caso ja sao os dados que devolve o servidor
     })
     .error(function(erro) {
         console.log(erro);
