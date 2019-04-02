@@ -17,13 +17,24 @@
             <div class="jumbotron">
                 <h1 class="text-center">Alurapic</h1>
             </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <input class="form-control" placeholder="filtrar">
+                    </form>
+                </div><!--fim col-md-12-->
+            </div><!--fim row-->
+
             <!--Uma AE é somente leitura, nossa view lê a informação no escopo do controller, mas não é 
                 capaz de atualizá-la. Este tipo de associação é chamado de one-way data binding, a 
                 informação flui do controller para a view. Aliás, esse dado associado à view pode ser qualquer 
                 tipo literal do JavaScript, inclusive um objeto.-->
-            <meu-painel titulo={{foto.titulo}} ng-repeat="foto in fotos">
-                <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-            </meu-painel>
+            <div class="row">
+                <meu-painel class="col-md-2" titulo={{foto.titulo}} ng-repeat="foto in fotos">
+                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                </meu-painel>
+            </div>
         
         </div><!-- fim container -->
     </body>
