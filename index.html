@@ -32,8 +32,10 @@
                 capaz de atualizá-la. Este tipo de associação é chamado de one-way data binding, a 
                 informação flui do controller para a view. Aliás, esse dado associado à view pode ser qualquer 
                 tipo literal do JavaScript, inclusive um objeto.-->
+
+            <!--O que for digitado no input vai ser guardado no $scope.filtro e a lista vai ter em conta esse filtro-->    
             <div class="row">
-                <meu-painel class="col-md-2" titulo={{foto.titulo}} ng-repeat="foto in fotos">
+                <meu-painel class="col-md-2" titulo={{foto.titulo}} ng-repeat="foto in fotos | filter: filtro">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </meu-painel>
             </div>
