@@ -21,7 +21,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <form>
-                        <input class="form-control" placeholder="filtrar">
+                        <!--é a diretiva p tudo que for ingresado em input que seja guardado 
+                            no $scope.filtro. O angular procura no $scope a prop. filtro-->
+                        <input  ng-model="filtro" class="form-control" placeholder="filtrar">
                     </form>
                 </div><!--fim col-md-12-->
             </div><!--fim row-->

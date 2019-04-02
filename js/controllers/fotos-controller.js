@@ -4,6 +4,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
     //o que ele devolve é uma promessa
 
     $scope.fotos = [];
+    $scope.filtro = '';
 
     $http.get('/v1/fotos')
     .success(function(retorno) {
