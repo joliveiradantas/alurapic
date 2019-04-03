@@ -12,6 +12,9 @@
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js "></script>
         <script src="js/lib/angular-animate.min.js"></script>
+        <!--Qdo importamos o modulo ngAnimate algumas diretivas passam a add
+        ou remover classes sem nossa ciencia. Exemplo: qdo usamos a diretiva ng-repeat
+        e um elemento sai da lista ele ganha a classe ng-leace, e qdo esta por sair ng-leave-active-->
     </head>
     <body ng-controller="FotosController">
         <div class="container">
@@ -39,7 +42,7 @@
             <!--O que for digitado no input vai ser guardado no $scope.filtro e a lista vai ter em conta esse filtro
             O filtro é aplicado em todas as propriedades do objeto-->    
             <div class="row">
-                <meu-painel class="col-md-2" titulo={{foto.titulo}} ng-repeat="foto in fotos | filter: filtro">
+                <meu-painel class="col-md-2 painel-animado" titulo={{foto.titulo}} ng-repeat="foto in fotos | filter: filtro">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </meu-painel>
             </div>
