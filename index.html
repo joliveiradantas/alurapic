@@ -29,7 +29,12 @@
                         <!--é a diretiva p tudo que for ingresado em input que seja guardado 
                             no $scope.filtro. O angular procura no $scope a prop. filtro
                         bg-model é two-way data bindingm tanto le do $scope como atualiza seu valor-->
-                        <input  ng-model="filtro" class="form-control" placeholder="filtrar">
+
+                        <!--o ng-model-options é uma diretiva que permite passar como parametro um objeto
+                        JS que tem a propriedade debounce que o q faz é atrasar em ms o valor do $scope.filtro,
+                        portanto tbm se atrasa a saida do elemento da lista para que funcione melhor o efeito-->
+
+                        <input  ng-model="filtro" ng-model-options="{ debounce: 500}" class="form-control" placeholder="filtrar">
                     </form>
                 </div><!--fim col-md-12-->
             </div><!--fim row-->
