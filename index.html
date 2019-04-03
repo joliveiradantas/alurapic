@@ -6,10 +6,12 @@
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css">
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js "></script>
+        <script src="js/lib/angular-animate.min.js"></script>
     </head>
     <body ng-controller="FotosController">
         <div class="container">
@@ -22,7 +24,8 @@
                 <div class="col-md-12">
                     <form>
                         <!--é a diretiva p tudo que for ingresado em input que seja guardado 
-                            no $scope.filtro. O angular procura no $scope a prop. filtro-->
+                            no $scope.filtro. O angular procura no $scope a prop. filtro
+                        bg-model é two-way data bindingm tanto le do $scope como atualiza seu valor-->
                         <input  ng-model="filtro" class="form-control" placeholder="filtrar">
                     </form>
                 </div><!--fim col-md-12-->
@@ -33,7 +36,8 @@
                 informação flui do controller para a view. Aliás, esse dado associado à view pode ser qualquer 
                 tipo literal do JavaScript, inclusive um objeto.-->
 
-            <!--O que for digitado no input vai ser guardado no $scope.filtro e a lista vai ter em conta esse filtro-->    
+            <!--O que for digitado no input vai ser guardado no $scope.filtro e a lista vai ter em conta esse filtro
+            O filtro é aplicado em todas as propriedades do objeto-->    
             <div class="row">
                 <meu-painel class="col-md-2" titulo={{foto.titulo}} ng-repeat="foto in fotos | filter: filtro">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
