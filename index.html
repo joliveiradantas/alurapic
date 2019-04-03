@@ -16,48 +16,11 @@
         ou remover classes sem nossa ciencia. Exemplo: qdo usamos a diretiva ng-repeat
         e um elemento sai da lista ele ganha a classe ng-leace, e qdo esta por sair ng-leave-active-->
     </head>
-    <body ng-controller="FotosController">
+    <body>
         <div class="container">
-        
-            <div class="jumbotron">
-                <h1 class="text-center">Alurapic</h1>
-            </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <form>
-                        <!--é a diretiva p tudo que for ingresado em input que seja guardado 
-                            no $scope.filtro. O angular procura no $scope a prop. filtro
-                        bg-model é two-way data bindingm tanto le do $scope como atualiza seu valor-->
-
-                        <!--o ng-model-options é uma diretiva que permite passar como parametro um objeto
-                        JS que tem a propriedade debounce que o q faz é atrasar em ms o valor do $scope.filtro,
-                        portanto tbm se atrasa a saida do elemento da lista para que funcione melhor o efeito-->
-
-                        <!--as diretivas do angular possuem uma propriedade 'priority' que determina quem será aplicado
-                        primeiro, por exemplo ng-model-options tem prioridade 0 e ng-model 1-->
-
-                        <input  ng-model="filtro" ng-model-options="{ debounce: 500}" class="form-control" placeholder="filtrar">
-                    </form>
-                </div><!--fim col-md-12-->
-            </div><!--fim row-->
-
-            <!--Uma AE é somente leitura, nossa view lê a informação no escopo do controller, mas não é 
-                capaz de atualizá-la. Este tipo de associação é chamado de one-way data binding, a 
-                informação flui do controller para a view. Aliás, esse dado associado à view pode ser qualquer 
-                tipo literal do JavaScript, inclusive um objeto.-->
-
-            <!--O que for digitado no input vai ser guardado no $scope.filtro e a lista vai ter em conta esse filtro
-            O filtro é aplicado em todas as propriedades do objeto-->    
-
-            <!--Ao filter posso dizer que propriedade quero que tenha em consideracao | filter : {titulo : filtro}-->
-
-            <div class="row">
-                <meu-painel class="col-md-2 painel-animado" titulo={{foto.titulo}} ng-repeat="foto in fotos | filter: {titulo: filtro} ">
-                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-                </meu-painel>
-            </div>
-        
+            <ng-view></ng-view>
+            
         </div><!-- fim container -->
     </body>
 </html>
