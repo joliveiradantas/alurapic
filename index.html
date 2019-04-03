@@ -34,6 +34,9 @@
                         JS que tem a propriedade debounce que o q faz é atrasar em ms o valor do $scope.filtro,
                         portanto tbm se atrasa a saida do elemento da lista para que funcione melhor o efeito-->
 
+                        <!--as diretivas do angular possuem uma propriedade 'priority' que determina quem será aplicado
+                        primeiro, por exemplo ng-model-options tem prioridade 0 e ng-model 1-->
+
                         <input  ng-model="filtro" ng-model-options="{ debounce: 500}" class="form-control" placeholder="filtrar">
                     </form>
                 </div><!--fim col-md-12-->
