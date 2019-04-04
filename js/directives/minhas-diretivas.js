@@ -17,9 +17,9 @@ angular.module('minhasDiretivas', [])
 
     //o atributo titulo no html é a interfaz de comunicacao com o escopo privado da diretiva
     //qdo o atributo tem o mesmo nome que a propriedad do escopo privado posso colocar so o @
-    /*  <meu-painel titulo="@{{foto.titulo}}">
-        </meu-painel>
-    */
+    //  <meu-painel titulo="@{{foto.titulo}}">
+    //    </meu-painel>
+    
    //a AE processa o valor e passa como String p o escopo da diretiva
     ddo.scope = {
         
