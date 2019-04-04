@@ -16,4 +16,7 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
             controller: 'FotosController'
 
         });
+
+        //Se el usuario digita uma rota que nao existe redireciono para a principal
+        $routeProvider.otherwise({redirectTo: '/fotos'});
     });
