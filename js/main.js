@@ -8,12 +8,18 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 
             //o angular precisa saber que o endereco que estamos tentando acessar nao é um endereco do server
             //para isso adicionamos o #
-            //o index é carregado mas atraves do sist. de rotas vai buscar a parcial
+            //o index é carregado mas atraves do sist. de rotas vai buscar a parcial via ajax 
             //Com o HTML5 e a History App foi possivel conseguir o mesmo resultado sem o #
             //Ativo esse servico atraves de $locationProvider que peco atraves do sist. de injecao de dependencias
 
             templateUrl: 'partials/principal.html',
             controller: 'FotosController'
+
+        });
+
+        $routeProvider.when('/fotos/new', {
+
+            templateUrl: 'partials/foto.html'
 
         });
 
