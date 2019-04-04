@@ -12,15 +12,21 @@
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js "></script>
         <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+
         <!--Qdo importamos o modulo ngAnimate algumas diretivas passam a add
         ou remover classes sem nossa ciencia. Exemplo: qdo usamos a diretiva ng-repeat
         e um elemento sai da lista ele ganha a classe ng-leace, e qdo esta por sair ng-leave-active-->
+
+        <!--a pagina index nao é recarregada durante o ciclo de vida da app. O angular atraves das rotas
+        busca a pagina desejada e atualiza o index. É um template com uma lacuna que recebe o conteudo das outras
+        paginas, uma por vez (partials)-->
     </head>
     <body>
         <div class="container">
 
             <ng-view></ng-view>
-            
+
         </div><!-- fim container -->
     </body>
 </html>
